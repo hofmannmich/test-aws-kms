@@ -12,7 +12,7 @@ helmCharts:
   - name: helm
     version: v1.0.0
     releaseName: test-aws-kms
-    namespace: wbnextgen-dev
+    namespace: wbnextgen-tui
     valuesFile: ../../helm/values.yaml
     additionalValuesFiles:
-    - ../../helm/values-dev.yaml
+    - ../../helm/values-tui.yaml
