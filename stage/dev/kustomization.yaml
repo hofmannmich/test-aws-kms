@@ -6,13 +6,13 @@ generators:
   - ./secret-generator.yaml
 
 helmGlobals:
-  chartHome: .
+  chartHome: ../..
 
 helmCharts:
   - name: helm
     version: v1.0.0
     releaseName: test-aws-kms
-    namespace: wbnextgen-tui
-    valuesFile: ./helm/values.yaml
+    namespace: wbnextgen-dev
+    valuesFile: ../../helm/values.yaml
     additionalValuesFiles:
-    - ./helm/values-dev.yaml
+    - ../../helm/values-dev.yaml
