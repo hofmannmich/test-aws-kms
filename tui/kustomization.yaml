@@ -1,18 +1,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-# https://github.com/hofmannmich/test-aws-kms/blob/main/kustomization.yaml
-generators:
-  - ./secret-generator.yaml
+# resources:
+#   - ../../base
 
 helmGlobals:
-  chartHome: ../..
+  chartHome: ..
+
+generators:
+  - ./secret-generator.yaml
 
 helmCharts:
   - name: helm
     version: v1.0.0
     releaseName: test-aws-kms
     namespace: wbnextgen-tui
-    valuesFile: ../../helm/values.yaml
+    valuesFile: ../helm/values.yaml
     additionalValuesFiles:
-    - ../../helm/values-tui.yaml
+      - ../helm/values-tui.yaml
